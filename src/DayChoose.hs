@@ -16,4 +16,4 @@ getDay :: IO Day
 getDay = Q.generate $ Q.choose (Monday, Friday)
 
 getDay2 :: IO Day
-getDay2 = Q.generate $ Q.oneof $ map return [Monday .. Friday]
+getDay2 = Q.generate $ Q.oneof $ Q.elements [Monday .. Friday]
